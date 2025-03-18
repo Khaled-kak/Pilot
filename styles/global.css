@@ -1,1 +1,13 @@
-
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.left-column, .right-column {
+    width: 20%;
+}
+.center-column {
+    width: 60%;
+}
+.editorial, .polls, .main-article, .other-articles, .info-feed {
+    margin-bottom: 20px;
+}
