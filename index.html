@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Three-Column Layout</title>
+    <style>
+        /* Reset and base styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        .header {
+            background-color: #163860;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            background-color: #1f66ba;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        /* Container for Columns */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Columns */
+        .column {
+            padding: 10px;
+            border-right: 1px solid #ccc;
+        }
+        .column:last-child {
+            border-right: none;
+        }
+
+        /* Middle Column Wider */
+        .column.middle {
+            flex: 2; /* Middle column is twice as wide as the others */
+        }
+
+        .column.left,
+        .column.right {
+            flex: 1; /* Left and right columns are equal in width */
+        }
+
+        /* Article Styles */
+        .article {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h3 {
+            margin-top: 0;
+            color: #163860;
+        }
+
+        .article a {
+            color: #1f66ba;
+            font-weight: bold;
+        }
+
+        .article a:hover {
+            color: #163860;
+        }
+
+        /* Separators */
+        .separator {
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #163860;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .column {
+                border-right: none;
+                margin-bottom: 20px;
+            }
+            .column.middle {
+                order: -1; /* Bring the middle column to the top */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Three-Column Layout</h1>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Three-Column Layout -->
+    <div class="container">
+        <!-- Left Column -->
+        <div class="column left">
+            <h2>Left Column</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque ipsum vitae nisi tincidunt, at tincidunt nisi tincidunt.</p>
+            <div class="separator"></div>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+        </div>
+
+        <!-- Middle Column (Wider) -->
+        <div class="column middle">
+            <h2>Recent Articles</h2>
+            
+            <div class="article">
+                <h3>Breaking News: Market Rebounds</h3>
+                <p>The stock market saw a sudden recovery today as major indices gained over 2%.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
+            </div>
+
+            <div class="article">
+                <h3>Tech Innovation: New AI Tool Released</h3>
+                <p>Startup unveils a groundbreaking AI assistant that promises to increase productivity.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
+            </div>
+
+            <div class="article">
+                <h3>Global Politics: Leaders Meet at Summit</h3>
+                <p>World leaders gathered today to discuss the pressing issues of climate change and trade.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column right">
+            <h2>Right Column</h2>
+            <p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+            <div class="separator"></div>
+            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2023 Three-Column Layout. All rights reserved.</p>
+    </div>
+</body>
+</html>
