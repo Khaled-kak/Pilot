@@ -1,39 +1,124 @@
-<div class="container">
-    <div class="left-column">
-        <!-- Éditorial et Sondages -->
-        <div class="editorial">
-            <h2>Éditorial</h2>
-            <p id="editorial-text"></p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZINFORMATION - L'enjeu de l’info & désinfo « Algérie »</title>
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Colonne de gauche -->
+        <div class="left-column">
+            <!-- Éditorial -->
+            <div class="editorial">
+                <h2>Éditorial</h2>
+                <p id="editorial-text"></p>
+            </div>
+
+            <!-- Sondages -->
+            <div class="polls">
+                <h2>Sondages</h2>
+                <form id="poll-form">
+                    <label for="poll-question-1">Trouvez-vous l'ampleur de la couverture négative de l'Algérie par les médias français justifiée ?</label>
+                    <select id="poll-question-1">
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
+                    </select>
+                    <button type="submit">Soumettre</button>
+                </form>
+
+                <form id="poll-form-2">
+                    <label for="poll-question-2">Trouvez-vous objective ou biaisée la couverture médiatique de l'Algérie par les médias internationaux ?</label>
+                    <select id="poll-question-2">
+                        <option value="objective">Objective</option>
+                        <option value="biaisée">Biaisée</option>
+                    </select>
+                    <button type="submit">Soumettre</button>
+                </form>
+
+                <form id="poll-form-3">
+                    <label for="poll-question-3">Quel est selon vous l'enjeu le plus important qui induit la couverture du sujet Algérie par les médias étrangers ?</label>
+                    <select id="poll-question-3">
+                        <option value="mémoire">Mémoire</option>
+                        <option value="énergie">Énergie</option>
+                        <option value="politique">Politique</option>
+                        <option value="économie">Économie</option>
+                    </select>
+                    <button type="submit">Soumettre</button>
+                </form>
+            </div>
         </div>
-        <div class="polls">
-            <h2>Sondages</h2>
-            <!-- Formulaire de sondage -->
+
+        <!-- Colonne centrale -->
+        <div class="center-column">
+            <!-- Gros titre et illustration -->
+            <div class="main-article">
+                <h1 id="main-article-title"></h1>
+                <img id="main-article-image" src="" alt="Illustration">
+                <p id="main-article-summary"></p>
+            </div>
+
+            <!-- Autres articles -->
+            <div class="other-articles">
+                <!-- Les articles seront ajoutés dynamiquement ici -->
+            </div>
+
+            <!-- Articles les plus lus -->
+            <div class="most-read">
+                <h2>Les 9 articles les plus lus</h2>
+                <div id="most-read-articles">
+                    <!-- Les articles les plus lus seront ajoutés dynamiquement ici -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Colonne de droite -->
+        <div class="right-column">
+            <!-- Fil d'info : Analyse par catégorie -->
+            <div class="info-feed">
+                <h2>Analyse par Catégorie</h2>
+                <div id="category-feed">
+                    <!-- Les articles par catégorie seront ajoutés dynamiquement ici -->
+                </div>
+            </div>
+
+            <!-- Fil d'info : Analyse par sentiment -->
+            <div class="info-feed">
+                <h2>Analyse par Sentiment</h2>
+                <div id="sentiment-feed">
+                    <!-- Les articles par sentiment seront ajoutés dynamiquement ici -->
+                </div>
+            </div>
+
+            <!-- Fil d'info : Analyse par source -->
+            <div class="info-feed">
+                <h2>Analyse par Source</h2>
+                <div id="source-feed">
+                    <!-- Les articles par source seront ajoutés dynamiquement ici -->
+                </div>
+            </div>
         </div>
     </div>
-    <div class="center-column">
-        <!-- Articles du jour -->
-        <div class="main-article">
-            <h1 id="main-article-title"></h1>
-            <img id="main-article-image" src="" alt="Illustration">
-            <p id="main-article-summary"></p>
+
+    <!-- Footer -->
+    <footer>
+        <nav>
+            <a href="#">Mentions Légales</a>
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">Conditions Générales</a>
+            <a href="#">Gestion des Cookies</a>
+        </nav>
+        <div class="social-media">
+            <h3>Suivez-nous</h3>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+            <a href="#">TikTok</a>
+            <a href="#">Fils RSS</a>
         </div>
-        <div class="other-articles">
-            <!-- Liste des autres articles -->
-        </div>
-    </div>
-    <div class="right-column">
-        <!-- Fil d'info -->
-        <div class="info-feed">
-            <h2>Analyse par Catégorie</h2>
-            <!-- Liste des articles par catégorie -->
-        </div>
-        <div class="info-feed">
-            <h2>Analyse par Sentiment</h2>
-            <!-- Liste des articles par sentiment -->
-        </div>
-        <div class="info-feed">
-            <h2>Analyse par Source</h2>
-            <!-- Liste des articles par source -->
-        </div>
-    </div>
-</div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="scripts/app.js"></script>
+</body>
+</html>
