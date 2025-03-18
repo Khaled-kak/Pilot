@@ -8,7 +8,13 @@ const mainArticleTitle = document.getElementById('main-article-title');
 const mainArticleImage = document.getElementById('main-article-image');
 const mainArticleSummary = document.getElementById('main-article-summary');
 const otherArticles = document.querySelector('.other-articles');
-const pollsForm = document.getElementById('poll-form');
+const mostReadArticles = document.getElementById('most-read-articles');
+const categoryFeed = document.getElementById('category-feed');
+const sentimentFeed = document.getElementById('sentiment-feed');
+const sourceFeed = document.getElementById('source-feed');
+const pollForm1 = document.getElementById('poll-form-1');
+const pollForm2 = document.getElementById('poll-form-2');
+const pollForm3 = document.getElementById('poll-form-3');
 
 // Récupérer les articles via NewsAPI
 async function fetchArticles() {
@@ -55,7 +61,7 @@ async function displayArticles() {
         mainArticleSummary.textContent = mainArticle.description;
 
         // Afficher les autres articles
-        articles.slice(1).forEach(async (article) => {
+        articles.slice(1, 10).forEach(async (article) => {
             const articleElement = document.createElement('div');
             articleElement.className = 'article';
             articleElement.innerHTML = `
@@ -67,15 +73,37 @@ async function displayArticles() {
             `;
             otherArticles.appendChild(articleElement);
         });
+
+        // Afficher les articles les plus lus
+        articles.slice(0, 9).forEach(async (article) => {
+            const articleElement = document.createElement('div');
+            articleElement.className = 'article';
+            articleElement.innerHTML = `
+                <h3>${await analyzeTitle(article.title)}</h3>
+                <p>${new Date(article.publishedAt).toLocaleDateString()}</p>
+            `;
+            mostReadArticles.appendChild(articleElement);
+        });
     }
 }
 
 // Gérer les sondages
-pollsForm.addEventListener('submit', (event) => {
+pollForm1.addEventListener('submit', (event) => {
     event.preventDefault();
-    const pollQuestion = document.getElementById('poll-question').value;
-    alert(`Merci pour votre réponse : ${pollQuestion}`);
-    // Ici, tu peux envoyer la réponse à un serveur ou la stocker localement
+    const answer = document.getElementById('poll-question-1').value;
+    alert(`Merci pour votre réponse : ${answer}`);
+});
+
+pollForm2.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const answer = document.getElementById('poll-question-2').value;
+    alert(`Merci pour votre réponse : ${answer}`);
+});
+
+pollForm3.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const answer = document.getElementById('poll-question-3').value;
+    alert(`Merci pour votre réponse : ${answer}`);
 });
 
 // Charger l'éditorial basé sur les articles du jour
