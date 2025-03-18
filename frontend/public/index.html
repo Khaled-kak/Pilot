@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Three-Column Layout</title>
+    <style>
+        /* Reset and base styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        .header {
+            background-color: #163860;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            background-color: #1f66ba;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        /* Container for Columns */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Columns */
+        .column {
+            padding: 10px;
+            border-right: 1px solid #ccc;
+        }
+        .column:last-child {
+            border-right: none;
+        }
+
+        /* Middle Column Wider */
+        .column.middle {
+            flex: 2; /* Middle column is twice as wide as the others */
+        }
+
+        .column.left,
+        .column.right {
+            flex: 1; /* Left and right columns are equal in width */
+        }
+
+        /* Separators */
+        .separator {
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #163860;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .column {
+                border-right: none;
+                margin-bottom: 20px;
+            }
+            .column.middle {
+                order: -1; /* Bring the middle column to the top */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Three-Column Layout</h1>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Three-Column Layout -->
+    <div class="container">
+        <!-- Left Column -->
+        <div class="column left">
+            <h2>Left Column</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque ipsum vitae nisi tincidunt, at tincidunt nisi tincidunt.</p>
+            <div class="separator"></div>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+        </div>
+
+        <!-- Middle Column (Wider) -->
+        <div class="column middle">
+            <h2>Middle Column</h2>
+            <p>Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.</p>
+            <div class="separator"></div>
+            <p>Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta.</p>
+            <div class="separator"></div>
+            <p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column right">
+            <h2>Right Column</h2>
+            <p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+            <div class="separator"></div>
+            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2023 Three-Column Layout. All rights reserved.</p>
+    </div>
+</body>
+</html>
