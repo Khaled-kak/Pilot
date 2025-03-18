@@ -73,6 +73,29 @@
             flex: 1; /* Left and right columns are equal in width */
         }
 
+        /* Article Styles */
+        .article {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h3 {
+            margin-top: 0;
+            color: #163860;
+        }
+
+        .article a {
+            color: #1f66ba;
+            font-weight: bold;
+        }
+
+        .article a:hover {
+            color: #163860;
+        }
+
         /* Separators */
         .separator {
             border-top: 1px solid #ccc;
@@ -129,12 +152,28 @@
 
         <!-- Middle Column (Wider) -->
         <div class="column middle">
-            <h2>Middle Column</h2>
-            <p>Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.</p>
-            <div class="separator"></div>
-            <p>Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta.</p>
-            <div class="separator"></div>
-            <p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+            <h2>Recent Articles</h2>
+            
+            <div class="article">
+                <h3>Breaking News: Market Rebounds</h3>
+                <p>The stock market saw a sudden recovery today as major indices gained over 2%.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
+            </div>
+
+            <div class="article">
+                <h3>Tech Innovation: New AI Tool Released</h3>
+                <p>Startup unveils a groundbreaking AI assistant that promises to increase productivity.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
+            </div>
+
+            <div class="article">
+                <h3>Global Politics: Leaders Meet at Summit</h3>
+                <p>World leaders gathered today to discuss the pressing issues of climate change and trade.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
+            </div>
         </div>
 
         <!-- Right Column -->
