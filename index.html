@@ -7,19 +7,38 @@
     <link rel="stylesheet" href="styles/global.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Colonne de gauche -->
-        <div class="left-column">
+    <!-- En-tête -->
+    <header>
+        <h1>DZINFORMATION</h1>
+        <p>L'enjeu de l’info & désinfo « Algérie »</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Analyse</a></li>
+            <li><a href="#">Observatoire Media</a></li>
+            <li><a href="#">Réinformation</a></li>
+            <li><a href="#">Qui sommes-nous</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <!-- Colonne de gauche : Éditorial et Sondages -->
+        <aside class="left-column">
             <!-- Éditorial -->
-            <div class="editorial">
+            <section class="editorial">
                 <h2>Éditorial</h2>
                 <p id="editorial-text"></p>
-            </div>
+            </section>
 
             <!-- Sondages -->
-            <div class="polls">
+            <section class="polls">
                 <h2>Sondages</h2>
-                <form id="poll-form">
+                <form id="poll-form-1">
                     <label for="poll-question-1">Trouvez-vous l'ampleur de la couverture négative de l'Algérie par les médias français justifiée ?</label>
                     <select id="poll-question-1">
                         <option value="oui">Oui</option>
@@ -47,17 +66,17 @@
                     </select>
                     <button type="submit">Soumettre</button>
                 </form>
-            </div>
-        </div>
+            </section>
+        </aside>
 
-        <!-- Colonne centrale -->
-        <div class="center-column">
+        <!-- Colonne centrale : Articles -->
+        <section class="center-column">
             <!-- Gros titre et illustration -->
-            <div class="main-article">
+            <article class="main-article">
                 <h1 id="main-article-title"></h1>
                 <img id="main-article-image" src="" alt="Illustration">
                 <p id="main-article-summary"></p>
-            </div>
+            </article>
 
             <!-- Autres articles -->
             <div class="other-articles">
@@ -65,41 +84,41 @@
             </div>
 
             <!-- Articles les plus lus -->
-            <div class="most-read">
+            <section class="most-read">
                 <h2>Les 9 articles les plus lus</h2>
                 <div id="most-read-articles">
                     <!-- Les articles les plus lus seront ajoutés dynamiquement ici -->
                 </div>
-            </div>
-        </div>
+            </section>
+        </section>
 
-        <!-- Colonne de droite -->
-        <div class="right-column">
-            <!-- Fil d'info : Analyse par catégorie -->
-            <div class="info-feed">
+        <!-- Colonne de droite : Fils d'info -->
+        <aside class="right-column">
+            <!-- Analyse par catégorie -->
+            <section class="info-feed">
                 <h2>Analyse par Catégorie</h2>
                 <div id="category-feed">
                     <!-- Les articles par catégorie seront ajoutés dynamiquement ici -->
                 </div>
-            </div>
+            </section>
 
-            <!-- Fil d'info : Analyse par sentiment -->
-            <div class="info-feed">
+            <!-- Analyse par sentiment -->
+            <section class="info-feed">
                 <h2>Analyse par Sentiment</h2>
                 <div id="sentiment-feed">
                     <!-- Les articles par sentiment seront ajoutés dynamiquement ici -->
                 </div>
-            </div>
+            </section>
 
-            <!-- Fil d'info : Analyse par source -->
-            <div class="info-feed">
+            <!-- Analyse par source -->
+            <section class="info-feed">
                 <h2>Analyse par Source</h2>
                 <div id="source-feed">
                     <!-- Les articles par source seront ajoutés dynamiquement ici -->
                 </div>
-            </div>
-        </div>
-    </div>
+            </section>
+        </aside>
+    </main>
 
     <!-- Footer -->
     <footer>
