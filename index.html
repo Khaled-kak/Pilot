@@ -26,48 +26,51 @@
     </nav>
 
     <!-- Contenu principal -->
-    <main>
-        <!-- Éditorial -->
-        <section class="editorial">
-            <h2>Éditorial</h2>
-            <p id="editorial-text"></p>
-        </section>
+    <main class="container">
+        <!-- Colonne de gauche : Éditorial et Sondages -->
+        <aside class="left-column">
+            <!-- Éditorial -->
+            <section class="editorial">
+                <h2>Éditorial</h2>
+                <p id="editorial-text"></p>
+            </section>
 
-        <!-- Sondages -->
-        <section class="polls">
-            <h2>Sondages</h2>
-            <form id="poll-form-1">
-                <label for="poll-question-1">Trouvez-vous l'ampleur de la couverture négative de l'Algérie par les médias français justifiée ?</label>
-                <select id="poll-question-1">
-                    <option value="oui">Oui</option>
-                    <option value="non">Non</option>
-                </select>
-                <button type="submit">Soumettre</button>
-            </form>
+            <!-- Sondages -->
+            <section class="polls">
+                <h2>Sondages</h2>
+                <form id="poll-form-1">
+                    <label for="poll-question-1">Trouvez-vous l'ampleur de la couverture négative de l'Algérie par les médias français justifiée ?</label>
+                    <select id="poll-question-1">
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
+                    </select>
+                    <button type="submit">Soumettre</button>
+                </form>
 
-            <form id="poll-form-2">
-                <label for="poll-question-2">Trouvez-vous objective ou biaisée la couverture médiatique de l'Algérie par les médias internationaux ?</label>
-                <select id="poll-question-2">
-                    <option value="objective">Objective</option>
-                    <option value="biaisée">Biaisée</option>
-                </select>
-                <button type="submit">Soumettre</button>
-            </form>
+                <form id="poll-form-2">
+                    <label for="poll-question-2">Trouvez-vous objective ou biaisée la couverture médiatique de l'Algérie par les médias internationaux ?</label>
+                    <select id="poll-question-2">
+                        <option value="objective">Objective</option>
+                        <option value="biaisée">Biaisée</option>
+                    </select>
+                    <button type="submit">Soumettre</button>
+                </form>
 
-            <form id="poll-form-3">
-                <label for="poll-question-3">Quel est selon vous l'enjeu le plus important qui induit la couverture du sujet Algérie par les médias étrangers ?</label>
-                <select id="poll-question-3">
-                    <option value="mémoire">Mémoire</option>
-                    <option value="énergie">Énergie</option>
-                    <option value="politique">Politique</option>
-                    <option value="économie">Économie</option>
-                </select>
-                <button type="submit">Soumettre</button>
-            </form>
-        </section>
+                <form id="poll-form-3">
+                    <label for="poll-question-3">Quel est selon vous l'enjeu le plus important qui induit la couverture du sujet Algérie par les médias étrangers ?</label>
+                    <select id="poll-question-3">
+                        <option value="mémoire">Mémoire</option>
+                        <option value="énergie">Énergie</option>
+                        <option value="politique">Politique</option>
+                        <option value="économie">Économie</option>
+                    </select>
+                    <button type="submit">Soumettre</button>
+                </form>
+            </section>
+        </aside>
 
-        <!-- Articles -->
-        <section class="articles">
+        <!-- Colonne centrale : Articles -->
+        <section class="center-column">
             <!-- Gros titre et illustration -->
             <article class="main-article">
                 <h1 id="main-article-title"></h1>
@@ -89,8 +92,8 @@
             </section>
         </section>
 
-        <!-- Fils d'info -->
-        <aside class="info-feeds">
+        <!-- Colonne de droite : Fils d'info -->
+        <aside class="right-column">
             <!-- Analyse par catégorie -->
             <section class="info-feed">
                 <h2>Analyse par Catégorie</h2>
