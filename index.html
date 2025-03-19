@@ -1,70 +1,262 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DZINFORMATION - L'enjeu de l’info & désinfo « Algérie »</title>
-    <link rel="stylesheet" href="styles/global.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Anonymized Three-Column Layout</title>
+    <link rel="stylesheet" href="frontend/styles/global.css">
+    <style>
+        /* Reset and base styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: noto-serif, Georgia, Verdana, Times, Times New Roman, Garamond, Palatino, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #163860;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        .header {
+            background-color: #163860;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        .header .auth-links {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .header .auth-links a {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .header .auth-links a:hover {
+            color: #1f66ba;
+        }
+
+        .header .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .search input {
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+            font-family: source-sans-pro, Arial, sans-serif;
+        }
+
+        .header .search button {
+            padding: 5px 10px;
+            background-color: #fff;
+            border: none;
+            border-radius: 3px;
+            margin-left: 5px;
+            cursor: pointer;
+            font-family: source-sans-pro, Arial, sans-serif;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            background-color: #1f66ba;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            font-weight: 600;
+            margin: 0 15px;
+            font-family: source-sans-pro, Arial, sans-serif;
+        }
+
+        .nav-menu a:hover {
+            color: #163860;
+        }
+
+        /* Container for Columns */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Columns */
+        .column {
+            padding: 10px;
+            border-right: 1px solid #ccc;
+        }
+
+        .column:last-child {
+            border-right: none;
+        }
+
+        /* Middle Column Wider */
+        .column.middle {
+            flex: 2; /* Middle column is twice as wide as the others */
+        }
+
+        .column.left,
+        .column.right {
+            flex: 1; /* Left and right columns are equal in width */
+        }
+
+        /* Article Styles */
+        .article {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h3 {
+            margin-top: 0;
+            color: #163860;
+        }
+
+        .article a {
+            color: #1f66ba;
+            font-weight: bold;
+        }
+
+        .article a:hover {
+            color: #163860;
+        }
+
+        /* Separators */
+        .separator {
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #163860;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .column {
+                border-right: none;
+                margin-bottom: 20px;
+            }
+            .column.middle {
+                order: -1; /* Bring the middle column to the top */
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- En-tête -->
-    <header>
-        <h1>DZINFORMATION</h1>
-        <p>L'enjeu de l’info & désinfo « Algérie »</p>
-    </header>
+    <!-- Header -->
+    <div class="header">
+        <!-- Auth Links -->
+        <div class="auth-links">
+            <a href="#">Se connecter</a>
+            <a href="#">S'abonner</a>
+        </div>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Analyse</a></li>
-            <li><a href="#">Observatoire Media</a></li>
-            <li><a href="#">Réinformation</a></li>
-            <li><a href="#">Qui sommes-nous</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+        <!-- Logo -->
+        <img src="Logo.png" alt="Logo" class="logo">
 
-    <!-- Contenu principal -->
-    <main class="container">
-        <!-- Colonne de gauche : Éditorial -->
-        <section class="left-column">
-            <h2>Éditorial</h2>
-            <p>
-                La presse d'extrême droite, au travers d'une manipulation insidieuse de l'information, adopte un sentiment négatif exacerbé pour influencer son audience. Ses articles, empreints de biais systématique, vont au-delà du simple effet d'annonce en cherchant à façonner durablement les perceptions publiques. Par des récits alarmistes et des affirmations déformées, ces médias créent un climat de méfiance et de polarisation, éluttant le débat démocratique. L'impact de cette stratégie se mesure tant par la stigmatisation des sujets sensibles que par la fragmentation de la société, imposant une pression idéologique tournée sur l'opinion et fragilisant l'unité nationale. Face à ces dérivés, l'avenir reste compromis.
-            </p>
-        </section>
+        <!-- Search Field -->
+        <div class="search">
+            <input type="text" placeholder="Rechercher...">
+            <button>🔍</button>
+        </div>
+    </div>
 
-        <!-- Colonne centrale : Analyse approfondie -->
-        <section class="center-column">
-            <h2>Un fait divers malheureux et condamnable transformé en enjeux politique par plusieurs médias et hommes politiques</h2>
-            <p><strong>Analyse approfondie</strong></p>
-        </section>
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+        <a href="#">Accueil</a>
+        <a href="#">Analyse</a>
+        <a href="#">Observatoire Media</a>
+        <a href="#">Réinformation</a>
+        <a href="#">Qui sommes-nous</a>
+        <a href="#">Contact</a>
+    </div>
 
-        <!-- Colonne de droite : Analyse par catégorie -->
-        <section class="right-column">
-            <h2>Analyse par catégorie</h2>
-            <div class="category">
-                <h3>Géopolitique</h3>
-                <p>Yannis Bonneville, chef d'entreprise à 17 ans : Avec l'intelligence artificielle, le champ des possibles est énorme !</p>
+    <!-- Three-Column Layout -->
+    <div class="container">
+        <!-- Left Column -->
+        <div class="column left">
+            <h2>Left Column</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque ipsum vitae nisi tincidunt, at tincidunt nisi tincidunt.</p>
+            <div class="separator"></div>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+        </div>
+
+        <!-- Middle Column (Wider) -->
+        <div class="column middle">
+            <h2>Recent Articles</h2>
+            
+            <div class="article">
+                <h3>Breaking News: Market Rebounds</h3>
+                <p>The stock market saw a sudden recovery today as major indices gained over 2%.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
             </div>
-            <div class="category">
-                <h3>Économie</h3>
-                <p>Yannis Bonneville, chef d'entreprise à 17 ans : Avec l'intelligence artificielle, le champ des possibles est énorme !</p>
+
+            <div class="article">
+                <h3>Tech Innovation: New AI Tool Released</h3>
+                <p>Startup unveils a groundbreaking AI assistant that promises to increase productivity.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
             </div>
-            <div class="category">
-                <h3>Défense</h3>
-                <p>Yannis Bonneville, chef d'entreprise à 17 ans : Avec l'intelligence artificielle, le champ des possibles est énorme !</p>
+
+            <div class="article">
+                <h3>Global Politics: Leaders Meet at Summit</h3>
+                <p>World leaders gathered today to discuss the pressing issues of climate change and trade.</p>
+                <a href="#">Read more</a>
+                <div class="separator"></div>
             </div>
-        </section>
-    </main>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column right">
+            <h2>Right Column</h2>
+            <p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+            <div class="separator"></div>
+            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 DZINFORMATION. Tous droits réservés.</p>
-    </footer>
+    <div class="footer">
+        <p>&copy; 2023 Anonymized Website. All rights reserved.</p>
+    </div>
 
-    <!-- Scripts JavaScript -->
-    <script src="scripts/app.js"></script>
+    <script src="frontend/src/app.js"></script>
 </body>
 </html>
