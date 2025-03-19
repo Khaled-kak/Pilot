@@ -1,262 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <title>Anonymized Three-Column Layout</title>
-    <link rel="stylesheet" href="frontend/styles/global.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ Information</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Reset and base styles */
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
         body {
-            font-family: noto-serif, Georgia, Verdana, Times, Times New Roman, Garamond, Palatino, serif;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff;
-            color: #163860;
+            background-color: #f4f4f4;
         }
-        a {
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Header */
-        .header {
-            background-color: #163860;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
+        header {
+            background-color: white;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid green;
         }
-
-        .header .logo {
+        .logo img {
             height: 50px;
-            vertical-align: middle;
         }
-
-        .header .auth-links {
+        nav ul {
+            list-style: none;
+            padding: 0;
             display: flex;
-            gap: 15px;
-            font-size: 14px;
         }
-
-        .header .auth-links a {
-            color: #fff;
-            font-weight: 600;
+        nav ul li {
+            margin: 0 10px;
         }
-
-        .header .auth-links a:hover {
-            color: #1f66ba;
-        }
-
-        .header .search {
-            display: flex;
-            align-items: center;
-        }
-
-        .header .search input {
-            padding: 5px;
-            border: none;
-            border-radius: 3px;
-            font-family: source-sans-pro, Arial, sans-serif;
-        }
-
-        .header .search button {
-            padding: 5px 10px;
-            background-color: #fff;
-            border: none;
-            border-radius: 3px;
-            margin-left: 5px;
-            cursor: pointer;
-            font-family: source-sans-pro, Arial, sans-serif;
-        }
-
-        /* Navigation Menu */
-        .nav-menu {
-            background-color: #1f66ba;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .nav-menu a {
-            color: #fff;
-            font-weight: 600;
-            margin: 0 15px;
-            font-family: source-sans-pro, Arial, sans-serif;
-        }
-
-        .nav-menu a:hover {
-            color: #163860;
-        }
-
-        /* Container for Columns */
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        /* Columns */
-        .column {
-            padding: 10px;
-            border-right: 1px solid #ccc;
-        }
-
-        .column:last-child {
-            border-right: none;
-        }
-
-        /* Middle Column Wider */
-        .column.middle {
-            flex: 2; /* Middle column is twice as wide as the others */
-        }
-
-        .column.left,
-        .column.right {
-            flex: 1; /* Left and right columns are equal in width */
-        }
-
-        /* Article Styles */
-        .article {
-            margin-bottom: 20px;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .article h3 {
-            margin-top: 0;
-            color: #163860;
-        }
-
-        .article a {
-            color: #1f66ba;
+        nav ul li a {
+            text-decoration: none;
+            color: black;
             font-weight: bold;
         }
-
-        .article a:hover {
-            color: #163860;
+        .auth button {
+            background-color: orange;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
         }
-
-        /* Separators */
-        .separator {
-            border-top: 1px solid #ccc;
-            margin: 20px 0;
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
         }
-
-        /* Footer */
-        .footer {
-            background-color: #163860;
-            color: #fff;
+        .sidebar, .categories {
+            width: 25%;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .main-content {
+            width: 50%;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .main-content img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .poll {
+            background: #e8f4ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        footer {
             text-align: center;
             padding: 10px;
-            margin-top: 20px;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            .column {
-                border-right: none;
-                margin-bottom: 20px;
-            }
-            .column.middle {
-                order: -1; /* Bring the middle column to the top */
-            }
+            background: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <!-- Auth Links -->
-        <div class="auth-links">
-            <a href="#">Se connecter</a>
-            <a href="#">S'abonner</a>
+    <header>
+        <div class="logo">
+            <img src="Logo.png" alt="DZ Information">
         </div>
-
-        <!-- Logo -->
-        <img src="Logo.png" alt="Logo" class="logo">
-
-        <!-- Search Field -->
-        <div class="search">
-            <input type="text" placeholder="Rechercher...">
-            <button>🔍</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="sentiment.html">Sentiment</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="enjeux.html">Enjeux</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth">
+            <button>Se connecter</button>
+            <button>S’abonner</button>
         </div>
-    </div>
-
-    <!-- Navigation Menu -->
-    <div class="nav-menu">
-        <a href="#">Accueil</a>
-        <a href="#">Analyse</a>
-        <a href="#">Observatoire Media</a>
-        <a href="#">Réinformation</a>
-        <a href="#">Qui sommes-nous</a>
-        <a href="#">Contact</a>
-    </div>
-
-    <!-- Three-Column Layout -->
-    <div class="container">
-        <!-- Left Column -->
-        <div class="column left">
-            <h2>Left Column</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque ipsum vitae nisi tincidunt, at tincidunt nisi tincidunt.</p>
-            <div class="separator"></div>
-            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
-        </div>
-
-        <!-- Middle Column (Wider) -->
-        <div class="column middle">
-            <h2>Recent Articles</h2>
-            
-            <div class="article">
-                <h3>Breaking News: Market Rebounds</h3>
-                <p>The stock market saw a sudden recovery today as major indices gained over 2%.</p>
-                <a href="#">Read more</a>
-                <div class="separator"></div>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <div class="poll">
+                <h3>Sentiment</h3>
+                <p>Trouvez justifié l’ampleur de la couverture négative de l’Algérie par les médias français ?</p>
+                <button>Oui</button>
+                <button>Non</button>
             </div>
-
-            <div class="article">
-                <h3>Tech Innovation: New AI Tool Released</h3>
-                <p>Startup unveils a groundbreaking AI assistant that promises to increase productivity.</p>
-                <a href="#">Read more</a>
-                <div class="separator"></div>
+            <div class="poll">
+                <h3>Biais et Objectivité</h3>
+                <p>Trouvez objective ou biaisée la couverture médiatique de l’Algérie par les médias français ?</p>
+                <button>Objective</button>
+                <button>Biaisée</button>
             </div>
-
-            <div class="article">
-                <h3>Global Politics: Leaders Meet at Summit</h3>
-                <p>World leaders gathered today to discuss the pressing issues of climate change and trade.</p>
-                <a href="#">Read more</a>
-                <div class="separator"></div>
+        </aside>
+        <section class="main-content">
+            <h1>Un fait divers malheureux et condamnable transformé en enjeux politique par plusieurs médias et hommes politiques</h1>
+            <a href="#">Analyse approfondie</a>
+            <img src="image-placeholder.jpg" alt="Image de l'article">
+        </section>
+        <aside class="categories">
+            <h2>Analyse par catégorie</h2>
+            <div class="category geopolitique">
+                <h3>Géopolitique</h3>
+                <p>Yannis Bonneville, chef d’entreprise à 17 ans...</p>
             </div>
-        </div>
-
-        <!-- Right Column -->
-        <div class="column right">
-            <h2>Right Column</h2>
-            <p>Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
-            <div class="separator"></div>
-            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2023 Anonymized Website. All rights reserved.</p>
-    </div>
-
-    <script src="frontend/src/app.js"></script>
+            <div class="category economie">
+                <h3>Économie</h3>
+                <p>Yannis Bonneville, chef d’entreprise à 17 ans...</p>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2025 DZ Information. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
